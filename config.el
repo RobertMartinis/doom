@@ -83,14 +83,8 @@
   (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
   (set-lsp-priority! 'ccls 2)) ; optional as ccls is the default in Doom
 
-;; Treesitter
+;; === Org ===
 
-(use-package! tree-sitter
-  :config
-  (require 'tree-sitter-langs)
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)) ;
-
-
-
-;; === Apps ===
+(map! :leader
+      :desc "Export Org to PDF"
+      "o e" #'org-latex-export-to-pdf)
