@@ -88,3 +88,14 @@
 (map! :leader
       :desc "Export Org to PDF"
       "o e" #'org-latex-export-to-pdf)
+
+;; === Tools ===
+
+;; Copilot
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
